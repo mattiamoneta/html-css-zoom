@@ -41,6 +41,7 @@ html{
 /* COMPONENTS */
 
 .btn{
+    position: relative;
     border-radius: 5px;
     padding: 4px 8px;
     text-decoration: none;
@@ -49,16 +50,25 @@ html{
     text-align: center;
 }
 
-.btn > .content, .btn > .dropup{
+
+.btn  .content, .btn  .dropup{
     display: inline-block;
 }
 
 .dropup{
-    background-color: red;
-    
+    padding: 5px;
 }
 
-.btn > .content{
+.dropup i{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: .8rem;
+}
+
+
+.btn  .content{
     padding: 5px;
 }
 
@@ -97,18 +107,14 @@ html{
     content: '\f0d7';
 }
 
-.btn-textual{
-    text-decoration: none;
-    font-size: .8rem;
-    margin: 20px;
-    color: red;
-}
+
 
 
 /* COLORS */
 
 .bg-darkgrey{background-color: #222222;}
 .bg-grey{background-color: #4a4a4a;}
+.text-green{color: rgb(63, 168, 63);}
 
 /* LAYOUT */
 
@@ -120,7 +126,7 @@ html{
 }
 
 .wrapper{
-    width: 90vw;
+    width: 97vw;
     margin: auto;
 }
 
@@ -144,6 +150,10 @@ html{
     justify-content: space-between;
 }
 
+.row.justify-center{
+    justify-content: center;
+}
+
 .row.v-align{
     height: 100%;
     align-items: center;
@@ -161,6 +171,8 @@ html{
     text-align: right;
 }
 
+
+
 /* TOOLBAR TOP */
 
 header{
@@ -169,6 +181,7 @@ header{
     left: 0;
     width: 100%;
     background-color: black;
+    z-index: 999;
 }
 
 .toolbar-top{
@@ -179,7 +192,7 @@ header{
 /* MAIN */
 
 .user-cam{
-    padding: 10px;
+    padding: 5px;
 }
 
 .cam-wrapper{
@@ -187,7 +200,27 @@ header{
     height: 168px;
     position: relative;
     background-color: red;
+    overflow: hidden;
 }
+
+.cam-wrapper img{
+    width: 100%;
+}
+
+.cam-wrapper .badge{
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    padding: 2px 5px;
+    color: white;
+}
+
+.cam-wrapper .badge span{
+    font-size: .8rem;
+}
+
 
 /* TOOLBAR BOTTOM */
 
@@ -204,9 +237,27 @@ footer{
     height: 100%;
 }
 
+
+.btn-textual{
+    text-decoration: none;
+    font-size: .8rem;
+    margin: 20px;
+    color: coral;
+}
+
 .btn-box{
     display: inline-block;
     height: 80px;
     line-height: 80px;
     background-color: #4a4a4a;
+}
+
+
+.btn-box:hover{
+    background-color: #2c2c2c;
+}
+
+
+.btn-box:hover .btn-textual{
+    color: red;
 }
